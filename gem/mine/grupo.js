@@ -799,7 +799,7 @@ $('body').on('click', '.swr-grupo .opt > ul > li', function(e) {
                 }, 500);
                 var senmsg = $(this).parent().parent().attr('no');
                 senmsg = senmsg.split("-gr-")[1];
-                var msg = '<li class="you animate__animated animate__fadeIn '+senid+' '+moset+'" no="0"> <div><span class="msg"><i>';
+                var msg = '<li style="background: transparent !important;" class="you animate__animated animate__fadeIn '+senid+' '+moset+'" no="0"> <div><span class="msg"><i>';
                 msg = msg+'<span class="block" type="files"><span>'+(escapeHtml(senmsg))+'<span class="animate__animated animate__fadeInUp animate__infinite">';
                 msg = msg+'<i class="gi-upload"></i></span></span></span></i>';
                 msg = msg+'</span></div></li>';
@@ -1143,7 +1143,7 @@ function grsendmsg(el, e, gif, gfm, gfw, gfh, mtype) {
             var nsenmsg = htmlspecialchars(senmsg);
             var prmsg = shwrdmre(nsenmsg, 0, 0, 1);
         }
-        var msg = '<li class="you animate__animated animate__fadeIn '+senid+' '+moset+' '+mtype+'" no="0"> <div>';
+        var msg = '<li style="background: transparent !important;" class="you animate__animated animate__fadeIn '+senid+' '+moset+' '+mtype+'" no="0"> <div>';
         msg = msg+'<span class="msg"><i>'+prmsg;
         var sending = ' <i class="info">'+$(".gphrases > .sending").text()+'<i class="tick recieved sending"><i></i><i></i></i></i>';
         if ($(".dumb .gdefaults > .msgstyle").text() != 'style2') {
@@ -1853,7 +1853,7 @@ $('.swr-grupo .attachfile').change(function(e) {
             senmsg = senmsg+' +('+totfil+')';
         }
         var moset = $(".dumb .gdefaults").find(".sndmsgalgn").text();
-        var msg = '<li class="you animate__animated animate__fadeIn '+senid+' '+moset+'" no="0"> <div><span class="msg"><i>';
+        var msg = '<li style="background: transparent !important;" class="you animate__animated animate__fadeIn '+senid+' '+moset+'" no="0"> <div><span class="msg"><i>';
         msg = msg+'<span class="block" type="files"><span><span class="ptxt">'+escapeHtml(senmsg)+' (<span class="prog">0%</span>)';
         msg = msg+'</span><span class="animate__animated animate__fadeInUp animate__infinite">';
         msg = msg+'<i class="gi-upload"></i></span></span></span></i>';

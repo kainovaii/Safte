@@ -60,7 +60,7 @@ $GLOBALS["grads"] = gr_ads('get');
     <link href="<?php gec($GLOBALS["default"]->weburl) ?>gem/tone/grupo-dark.css" rel="stylesheet">
     <?php gr_core('hf', 'header'); ?>
 </head>
-<body class='<?php gec(gr_profile('get', $GLOBALS["user"]['id'], 'skinmode')); ?>'>
+<body class="dark" style="background: none">
     <?php gr_core('hf', 'bodyopen'); ?>
     <div class='gr-preloader'>
         <div>
@@ -75,23 +75,22 @@ $GLOBALS["grads"] = gr_ads('get');
                     if ($GLOBALS["logged"] || empty($GLOBALS["grload"]->group) || $GLOBALS["default"]->hide_grouptab == 'disable') {
                     ?>
                         <div class="col-md-5 col-lg-2 aside lside">
-                            <div class='head'>
-                                <span class='menu'>
+                            <div class="head" style="background: #303136; border: none">
+                                <span class="menu">
                                     <?php fc('grmenu'); ?>
                                 </span>
-                                <span class='logo'>
-                                    <img src="<?php gec(mf("grupo/global/sitelogo.png")); ?>" class="d-none d-md-block" />
-                                    <img src="<?php gec(mf("grupo/global/mobilelogo.png")); ?>" class="d-block d-md-none" />
+                                <span class="logo">
+
                                 </span>
-                                <span class='icons'>
+                                <span class="icons">
                                     <?php fc('grdoable'); ?>
                                 </span>
                             </div>
-                            <div class="search">
+                            <div class="search" style="background: #303136; border: none">
                                 <i class="gi-search"></i>
-                                <input type="text" placeholder='<?php gec($GLOBALS["lang"]->search_here) ?>' />
+                                <input style="background: #404449;" type="text" placeholder='<?php gec($GLOBALS["lang"]->search_here) ?>' />
                             </div>
-                            <div class="tabs">
+                            <div class="tabs" style="background: #303136; border: none">
                                 <ul>
                                     <?php if (empty($GLOBALS["grload"]->group) || $GLOBALS["default"]->hide_grouptab == 'disable') { ?>
                                     <li class='active' act='groups' side='lside' openfirst='1' zero='0' unseen='0' zval='<?php gec($GLOBALS["lang"]->zero_groups) ?>'><?php gec($GLOBALS["lang"]->groups) ?> <i></i>
@@ -136,9 +135,9 @@ $GLOBALS["grads"] = gr_ads('get');
                                     </div>
                                 </div>
                                 <span class="d-none grproceed loadside appnd" offset=0></span>
-                                <ul class='list fh'>
+                                <ul class="list fh" style="background: #303136; border: none">
                                 </ul>
-                                <span class="addmore">
+                                <span class="addmore" style="background: #36393F">
                                     <span>
                                         <i class="gi-plus"></i>
                                     </span>
@@ -180,8 +179,8 @@ $GLOBALS["grads"] = gr_ads('get');
                     } else {
                         $GLOBALS["grusrlog"]['panelclass'] = 'col-md-12 col-lg-12';
                     } ?>
-                    <div class="col-md-7 col-lg-8 nomob panel" no=0 ldt=0 lstseen=0 deactiv=0>
-                        <div class='head groupnav d-none'>
+                    <div class="col-md-7 col-lg-8 nomob panel" no=0 ldt=0 lstseen=0 deactiv=0 style="background: #36393E;">
+                        <div class="head groupnav d-none shadow" style="background: #36393E; border: none; ">
                             <?php if ($GLOBALS["logged"]) {
                                 ?>
                                 <i class="icon gi-left-open tabclose d-none animate__animated animate__fadeInRight" side="right"></i>
@@ -304,7 +303,7 @@ $GLOBALS["grads"] = gr_ads('get');
                                     </div>
                                     <?php
                                 } ?>
-                                <span class='box'>
+                                <span class="box" style="background: #36393E; border: none;">
                                     <span class='icon left'>
                                         <?php
                                         if (isset($GLOBALS["roles"]['features'][17]) || $GLOBALS["default"]->tenor_enable == 'enable' && gr_role('access', 'features', '3')) {
@@ -373,9 +372,9 @@ $GLOBALS["grads"] = gr_ads('get');
                                             <?php
                                         } ?>
                                     </span>
-                                    <input type='hidden' value=0 class='replyid' />
-                                    <input type='hidden' value=0 class='userid' />
-                                    <i class='sendbtn'><i></i></i>
+                                    <input type='hidden' value=0 class="replyid" />
+                                    <input type='hidden' value=0 class="userid" />
+                                    <i style="display: none" class="sendbtn"><i></i></i>
                                 </span>
                                 <?php
                             } ?>
@@ -384,22 +383,22 @@ $GLOBALS["grads"] = gr_ads('get');
                     <?php if ($GLOBALS["logged"]) {
                         ?>
                         <div class="col-md-5 col-lg-2 nomob aside rside">
-                            <div class="top">
+                            <div class="top" style="background: #303136; border: none">
                                 <span class='left'>
                                     <i class='icon gi-left-open goback d-md-none'></i>
                                     <span class="vwp" no="<?php gec($GLOBALS["user"]['id']); ?>">
                                         <img class="lazyimg" data-src="<?php gec(gr_img('users', $GLOBALS["user"]['id'])); ?>">
-                                        <span><?php gec(gr_profile('get', $GLOBALS["user"]['id'], 'name')); ?>
+                                        <span style="color: white;"><?php gec(gr_profile('get', $GLOBALS["user"]['id'], 'name')); ?>
                                             <span>@<?php gec(usr('Grupo', 'select', $GLOBALS["user"]['id'])['name']); ?></span>
                                         </span>
                                     </span></span>
 
                             </div>
-                            <div class="search">
+                            <div class="search" style="background: #303136; border: none">
                                 <i class="gi-search"></i>
-                                <input type="text" spellcheck="false" placeholder='<?php gec($GLOBALS["lang"]->search_here) ?>' />
+                                <input style="background: #404449;" type="text" spellcheck="false" placeholder='<?php gec($GLOBALS["lang"]->search_here) ?>' />
                             </div>
-                            <div class="tabs">
+                            <div class="tabs" style="background: #303136;">
                                 <ul>
                                     <?php if (isset($GLOBALS["roles"]['groups'][16])) {
                                         ?>
@@ -428,16 +427,16 @@ $GLOBALS["grads"] = gr_ads('get');
                                     </div>
                                 </div>
                                 <span class="d-none grproceed loadside appnd" offset=0></span>
-                                <ul class='list fh groups'>
+                                <ul class="list fh groups" style="background: #303136;">
 
                                 </ul>
-                                <span class="addmore">
+                                <span class="addmore" style="background: #36393F">
                                     <span>
                                         <i class="gi-plus"></i>
                                     </span>
                                 </span>
-                                <div class="profile">
-                                    <div class="top">
+                                <div class="profile" style="background: #303136">
+                                    <div class="top" style="background: #303136">
                                         <span class="coverpic"><img class="lazyimg" data-src="" /><span></span></span>
                                         <span class="edit"><span><i class="gi-picture-1"></i></span><i class='formpop' title='<?php gec($GLOBALS["lang"]->edit_profile) ?>' data-side="profile" do='edit' btn='<?php gec($GLOBALS["lang"]->update) ?>' xtid="" act='profile'><?php gec($GLOBALS["lang"]->edit_profile) ?></i></span>
                                         <span class="dp"><img class="lazyimg" data-src="" /></span>
@@ -446,7 +445,7 @@ $GLOBALS["grads"] = gr_ads('get');
                                         <span class="role"></span>
                                         <span class="refresh vwp d-none">refresh</span>
                                     </div>
-                                    <div class="middle">
+                                    <div class="middle" style="background: #303136; box-shadow: none">
                                         <span class="pm loadgroup" ldt="user" no=""></span>
                                         <span class="stats">
                                             <span><span>0</span><i></i></span>
@@ -455,7 +454,9 @@ $GLOBALS["grads"] = gr_ads('get');
                                             <b><i class="gi-lock-1"></i></b>
                                         </span>
                                     </div>
-                                    <div class="bottom">
+
+                                    <!--
+                                    <div class="bottom" style="background: #36393F">
                                         <div>
                                             <ul>
                                             </ul>
@@ -466,6 +467,7 @@ $GLOBALS["grads"] = gr_ads('get');
                                             </div>
                                         </div>
                                     </div>
+                                    -->
                                 </div>
                                 <?php gr_ads('place', 'rightside'); ?>
                             </div>
@@ -479,7 +481,7 @@ $GLOBALS["grads"] = gr_ads('get');
     </section>
     <section class="grupo-standby">
         <div>
-            <span><img class="lazyimg" data-src="<?php gec(mf("grupo/global/sitelogo.png")); ?>" /></span>
+            <span><img class="lazyimg" data-src="<?php gec(mf("")); ?>" /></span>
         </div>
     </section>
 
@@ -685,3 +687,77 @@ gr_core('hf', 'footer');
     document.body.appendChild(el);
 </script>
 </html>
+
+<style>
+    * {
+        border: none !important;
+    }
+
+    .emojionearea-editor {
+        background: #40444A !important;
+    }
+
+    .emojionearea {
+        background: #40444A !important;
+        border: none !important;
+    }
+
+    .addmore {
+        background: #36393F !important;
+        border-radius: 100%;
+    }
+
+    .loadgroup.paj.active {
+        background: transparent !important;
+        border-left: solid 3px white !important;
+    }
+
+    .loadgroup.paj:hover {
+        background: transparent !important;
+
+    }
+
+    .crew:hover {
+        background: #303136 !important;
+
+    }
+
+    .you i {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .gr-remove {
+        color: red !important;
+    }
+    .gr-reply {
+        color: red !important;
+    }
+
+    .swr-menu {
+        background: #191A1D !important;
+        padding: 8px !important;
+    }
+
+    .swr-menu .formpop {
+        padding: 8px !important;
+        transition: .4s; !important;
+        border-radius: 3px !important;
+        margin-bottom: 5px;
+    }
+
+    .swr-menu .formpop:hover {
+        background: #5D6EB0 !important;
+    }
+
+    .swr-menu input {
+        padding: 8px !important;
+        transition: .4s; !important;
+        border-radius: 3px !important;
+        margin-bottom: 5px;
+    }
+
+    .swr-menu input:hover {
+        background: #5D6EB0 !important;
+    }
+</style>

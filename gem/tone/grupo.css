@@ -2141,7 +2141,7 @@ left: 0px;
 
 .swr-grupo .panel > .room > .msgs > li.you > div > .msg > .urlpreview
 {
-background: linear-gradient(to right,#E91E63,#9C27B0);
+background: linear-gradient(to right,transparent,transparent);
 color: #ffffff;
 box-shadow: 0px 0px 0px;
 }
