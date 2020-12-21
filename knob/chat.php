@@ -24,7 +24,7 @@ gr_metatags();
 $GLOBALS["grads"] = gr_ads('get');
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -68,13 +68,13 @@ $GLOBALS["grads"] = gr_ads('get');
         </div>
     </div>
     <section class="swr-grupo baevox-powered<?php gec(' '.$GLOBALS["lang"]->core_align.' '.$GLOBALS["grusrlog"]["radiostatus"]) ?>">
-        <div class='window fh'>
+        <div class="fh">
             <div class="container-fluid fh">
                 <div class="row fh">
                     <?php
                     if ($GLOBALS["logged"] || empty($GLOBALS["grload"]->group) || $GLOBALS["default"]->hide_grouptab == 'disable') {
-                        ?>
-                        <div class="col-md-5 col-lg-3 aside lside">
+                    ?>
+                        <div class="col-md-5 col-lg-2 aside lside">
                             <div class='head'>
                                 <span class='menu'>
                                     <?php fc('grmenu'); ?>
@@ -93,39 +93,25 @@ $GLOBALS["grads"] = gr_ads('get');
                             </div>
                             <div class="tabs">
                                 <ul>
-                                    <?php
-                                    if (empty($GLOBALS["grload"]->group) || $GLOBALS["default"]->hide_grouptab == 'disable') {
-                                        ?>
-                                        <li class='active' act='groups' side='lside' openfirst='1' zero='0' unseen='0' zval='<?php gec($GLOBALS["lang"]->zero_groups) ?>'><?php gec($GLOBALS["lang"]->groups) ?> <i></i>
-                                            <?php if (gr_role('access', 'groups', '6')) {
-                                                ?>
-                                                <ul class='subtab'>
-                                                    <li filtr='all'><?php gec($GLOBALS["lang"]->all) ?></li>
-                                                    <li filtr='joined'><?php gec($GLOBALS["lang"]->joined) ?></li>
-                                                    <li filtr='unjoined'><?php gec($GLOBALS["lang"]->unjoined) ?></li>
-                                                </ul>
-                                                <?php
-                                            } ?>
-                                        </li>
-                                        <?php
-                                    }
-                                    if (gr_role('access', 'privatemsg', '2')) {
-                                        ?>
+                                    <?php if (empty($GLOBALS["grload"]->group) || $GLOBALS["default"]->hide_grouptab == 'disable') { ?>
+                                    <li class='active' act='groups' side='lside' openfirst='1' zero='0' unseen='0' zval='<?php gec($GLOBALS["lang"]->zero_groups) ?>'><?php gec($GLOBALS["lang"]->groups) ?> <i></i>
+                                    <?php if (gr_role('access', 'groups', '6')) { ?>
+                                    <ul class='subtab'>
+                                        <li filtr='all'><?php gec($GLOBALS["lang"]->all) ?></li>
+                                        <li filtr='joined'><?php gec($GLOBALS["lang"]->joined) ?></li>
+                                        <li filtr='unjoined'><?php gec($GLOBALS["lang"]->unjoined) ?></li>
+                                    </ul>
+                                    <?php } ?>
+                                    </li>
+                                    <?php  } if (gr_role('access', 'privatemsg', '2')) { ?>
                                         <li act='pm' side='lside' zero='0' unread='0' zval='<?php gec($GLOBALS["lang"]->zero_pm) ?>'><?php gec($GLOBALS["lang"]->pm) ?> <i></i></li>
-                                        <?php
-                                    } ?>
-                                    <?php
-                                    if (gr_role('access', 'files', '5')) {
-                                        ?>
+                                    <?php } ?>
+                                    <?php if (gr_role('access', 'files', '5')) { ?>
                                         <li act='files' <?php if (gr_role('access', 'files', '1')) { gec('class=uploadable'); } ?> side='lside' zero='0KB' zval='<?php gec($GLOBALS["lang"]->zero_files) ?>'><?php gec($GLOBALS["lang"]->files) ?></li>
-                                        <?php
-                                    } ?>
-                                    <?php
-                                    if (gr_role('access', 'users', '5') && $GLOBALS["default"]->show_online_tab == 'enable') {
-                                        ?>
+                                    <?php } ?>
+                                    <?php if (gr_role('access', 'users', '5') && $GLOBALS["default"]->show_online_tab == 'enable') { ?>
                                         <li act='online' side='lside' zero='0' unread='0' zval='<?php gec($GLOBALS["lang"]->zero_online) ?>'><?php gec($GLOBALS["lang"]->online) ?> <i></i></li>
-                                        <?php
-                                    } ?>
+                                    <?php } ?>
 
                                     <li side='lside' class='xtra'></li>
                                     <span class="gruploader">
@@ -151,7 +137,6 @@ $GLOBALS["grads"] = gr_ads('get');
                                 </div>
                                 <span class="d-none grproceed loadside appnd" offset=0></span>
                                 <ul class='list fh'>
-
                                 </ul>
                                 <span class="addmore">
                                     <span>
@@ -190,11 +175,12 @@ $GLOBALS["grads"] = gr_ads('get');
                                 <?php
                             } ?>
                         </div>
+                        <!-- End side -->
                         <?php
                     } else {
                         $GLOBALS["grusrlog"]['panelclass'] = 'col-md-12 col-lg-12';
                     } ?>
-                    <div class="<?php gec($GLOBALS["grusrlog"]['panelclass'].' '); ?>nomob panel" no=0 ldt=0 lstseen=0 deactiv=0>
+                    <div class="col-md-7 col-lg-8 nomob panel" no=0 ldt=0 lstseen=0 deactiv=0>
                         <div class='head groupnav d-none'>
                             <?php if ($GLOBALS["logged"]) {
                                 ?>
@@ -255,16 +241,10 @@ $GLOBALS["grads"] = gr_ads('get');
                                     </div>
                                 </div>
                             </div>
-                            <ul class='msgs fh'>
-                                <div class='zeroelem fh'>
+                            <ul class="msgs fh">
+                                <div>
                                     <div class="welcome">
-                                        <span>
-                                            <img src="<?php gec(mf("grupo/global/welcome.png")); ?>" />
-                                            <i class="title"><?php gec($GLOBALS["lang"]->welcome_user) ?></i>
-                                            <i class="desc"><?php gec($GLOBALS["lang"]->welcome_msg) ?></i>
-                                            <i class="foot"><?php gec($GLOBALS["lang"]->welcome_footer) ?></i>
-                                        </span>
-                                        <?php gr_ads('place', 'welcome'); ?>
+
                                     </div>
                                 </div>
                             </ul>
@@ -403,8 +383,8 @@ $GLOBALS["grads"] = gr_ads('get');
                     </div>
                     <?php if ($GLOBALS["logged"]) {
                         ?>
-                        <div class="col-md-5 col-lg-3 nomob aside rside tabfold">
-                            <div class='top'>
+                        <div class="col-md-5 col-lg-2 nomob aside rside">
+                            <div class="top">
                                 <span class='left'>
                                     <i class='icon gi-left-open goback d-md-none'></i>
                                     <span class="vwp" no="<?php gec($GLOBALS["user"]['id']); ?>">
@@ -413,9 +393,7 @@ $GLOBALS["grads"] = gr_ads('get');
                                             <span>@<?php gec(usr('Grupo', 'select', $GLOBALS["user"]['id'])['name']); ?></span>
                                         </span>
                                     </span></span>
-                                <span class='right'>
-                                    <?php gec(gr_lang('list')) ?>
-                                </span>
+
                             </div>
                             <div class="search">
                                 <i class="gi-search"></i>
@@ -423,7 +401,6 @@ $GLOBALS["grads"] = gr_ads('get');
                             </div>
                             <div class="tabs">
                                 <ul>
-                                    <li act='alerts' unread=0 zero='0' zval='<?php gec($GLOBALS["lang"]->zero_alerts) ?>' side='rside'><?php gec($GLOBALS["lang"]->alerts) ?> <i></i></li>
                                     <?php if (isset($GLOBALS["roles"]['groups'][16])) {
                                         ?>
                                         <li act='crew' class='grtab d-none' zero='0' zval='<?php gec($GLOBALS["lang"]->zero_crew) ?>' side='rside'><?php gec($GLOBALS["lang"]->crew) ?>
@@ -439,8 +416,7 @@ $GLOBALS["grads"] = gr_ads('get');
                                         </li>
                                         <?php
                                     } ?>
-                                    <li act='complaints' comp=0 unread=0 class='grtab d-none' zero='0' zval='<?php gec($GLOBALS["lang"]->zero_complaints) ?>' side='rside'><?php gec($GLOBALS["lang"]->complaints) ?> <i></i></li>
-                                    <li side='rside' class='xtra'></li>
+
                                 </ul>
                             </div>
                             <div class="content">
@@ -507,17 +483,14 @@ $GLOBALS["grads"] = gr_ads('get');
         </div>
     </section>
 
-    <section class="grupo-pop<?php gec(' '.$GLOBALS["lang"]->core_align) ?>">
+    <section class="grupo-pop<?php gec(' '.$GLOBALS["lang"]->core_align) ?>" style="background: rgba(8, 9, 9, .8)">
         <div>
-            <form method='post' autocomplete="off" class='grform' spellcheck="false">
+            <form method="post" autocomplete="off" class="grform col-sm-3" spellcheck="false">
                 <span class="grformspin">
                     <span></span>
                 </span>
-                <span class="head"></span>
-                <span class="search">
-                    <i class="gi-search"></i>
-                    <input spellcheck="false" type="text" placeholder="<?php gec($GLOBALS["lang"]->search_here) ?>" />
-                </span>
+                <span class="head" style="background: transparent"></span>
+
                 <div class="fields">
 
                 </div>

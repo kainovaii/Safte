@@ -1,1 +1,16 @@
-# Safte
+# Code Structure
+- Chat Page : knob/chat.php file
+- Login Page : knob/signin.php file
+- CSS Files : gem/tone folder
+- JS Files : gem/mine folder 
+- Images & Uploaded files : gem/ore folder
+- User Uploaded files : gem/ore/grupo/files folder
+- Third party scripts & fonts : riches folder
+- Safte Functions : door folder
+- Login Functions : door/grlogin/load.php file
+- User Functions : door/user/load.php file
+- List Functions : door/grlist/load.php file
+- Database Functions : door/db/load.php file
+- Password Hashing Methods : door/guard/load.php file
+- User Database Tables : gr_users,gr_profiles,gr_options
+- Login Sessions Database Table : gr_sessions,gr_utrack

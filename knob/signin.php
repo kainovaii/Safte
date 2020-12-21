@@ -16,7 +16,7 @@ gr_metatags();
 $GLOBALS["grads"] = gr_ads('get', 'signin');
 $pgload = str_replace('/', '', pg('signin/pg'));
 ?><!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -48,65 +48,53 @@ $pgload = str_replace('/', '', pg('signin/pg'));
     <?php gr_core('hf', 'header'); ?>
 </head>
 <body class="sign two bgone">
-    <?php gr_core('hf', 'bodyopen'); ?>
-    <div class="gr-lselect">
-        <?php pr(gr_lang('list', 2)) ?>
-    </div>
-    <section>
-        <div>
-            <div>
-                <?php gr_ads('place', 'siginpageheader'); ?>
-                <div class='box<?php gec(' '.$GLOBALS["lang"]->core_align) ?>'>
-                    <div class="logo">
-                        <img src="<?php gec(mf("grupo/global/logo.png")); ?>" />
-                    </div>
-                    <div class="errormsg">
-                        <span></span>
-                    </div>
-                    <div class="swithlogin">
-                        <ul>
-                            <li class="active"><?php gec($GLOBALS["lang"]->login); ?></li>
-                            <?php if ($GLOBALS["default"]->guest_login == 'enable') {
-                                ?>
-                                <li class="lag"><?php gec($GLOBALS["lang"]->login_as_guest); ?></li>
-                                <?php
-                            } ?>
-                        </ul>
-                    </div>
-                    <form autocomplete='off' class='gr_sign'>
+
+    <section style="background: url('https://i.imgur.com/7wDYtsG.jpg'); background-position: center;  background-repeat: no-repeat; background-size: cover;">
+            <div class="row justify-content-center">
+                <div class="col-sm-3">
+
+                    <form autocomplete="off" class="gr_sign col-sm-3">
+                        <div class="errormsg">
+                            <span></span>
+                        </div>
+
                         <div class="elements">
                             <input type="hidden" name="act" value=1 />
                             <input type="hidden" name="do" class='doz' value='login' />
                             <div class='register d-none'>
-                                <label><i class="gi-user"></i>
-                                    <input type="text" autocomplete='grautocmp' name="fname" placeholder="<?php gec($GLOBALS["lang"]->full_name) ?>" />
-                                </label>
-                                <label><i class="gi-mail"></i>
-                                    <input type="email" autocomplete='grautocmp' name="email" placeholder="<?php gec($GLOBALS["lang"]->email_address) ?>" />
-                                </label>
-                                <label><i class="gi-globe"></i>
-                                    <input type="text" autocomplete='grautocmp' name="name" placeholder="<?php gec($GLOBALS["lang"]->username) ?>" />
-                                </label>
+                                <div class="dc_hello">Créer un compte</div>
+                                <div class="dc_hello_secondary"></div>
+                                <div class="form-group">
+                                    <label><?php gec($GLOBALS["lang"]->full_name) ?></label>
+                                    <input type="text" autocomplete='grautocmp' name="fname" />
+                                </div>
+                                <div class="form-group">
+                                    <label><?php gec($GLOBALS["lang"]->email_address) ?></label>
+                                    <input type="email" autocomplete='grautocmp' name="email" />
+                                </div>
+                                <div class="form-group">
+                                    <label><?php gec($GLOBALS["lang"]->username) ?></label>
+                                    <input type="text" autocomplete='grautocmp' name="name" />
+                                </div>
                                 <?php gr_loginfields(); ?>
                             </div>
-
-                            <div class='loginasguest d-none'>
-                                <label><i class="gi-user"></i>
-                                    <input type="text" autocomplete='grnickname' class="nickname" name="nickname" placeholder="<?php gec($GLOBALS["lang"]->nickname) ?>" />
-                                </label>
+                            <div class="login">
+                                <div class="dc_hello">Ha, te revoila !</div>
+                                <div class="dc_hello_secondary">Nous sommes si heureux de te revoir !</div>
+                                <div class="form-group">
+                                    <label><?php gec($GLOBALS["lang"]->email_username) ?></label>
+                                    <input type="text" autocomplete='grautocmp' name="sign" />
+                                </div>
                             </div>
-                            <div class='login'>
-                                <label><i class="gi-user"></i>
-                                    <input type="text" autocomplete='grautocmp' name="sign" placeholder="<?php gec($GLOBALS["lang"]->email_username) ?>" />
-                                </label>
-                            </div>
-                            <div class='global'>
-                                <label><i class="gi-lock"></i>
-                                    <input type="password" class='gstdep' autocomplete='grautocmp' name="pass" placeholder="<?php gec($GLOBALS["lang"]->password) ?>" />
-                                </label>
+                            <div class="global">
+                                <div class="form-group">
+                                    <label><?php gec($GLOBALS["lang"]->password) ?></label>
+                                    <input type="password" class='gstdep' autocomplete='grautocmp' name="pass" />
+                                </div>
                             </div>
                         </div>
                         <div class="regsep d-none"></div>
+                        <!--
                         <div class="sub">
                             <span class='rmbr'>
                                 <i><b class="active"></b>
@@ -115,45 +103,35 @@ $pgload = str_replace('/', '', pg('signin/pg'));
                                 <?php gec($GLOBALS["lang"]->remember_me) ?></span>
                             <span class="doer" data-do="forgot"><?php gec($GLOBALS["lang"]->forgot_password) ?></span>
                         </div>
-                        <?php if ($GLOBALS["default"]->recaptcha == 'enable') {
-                            ?>
+                        -->
+
+                        <!-- CAPCHAT -->
+                        <?php if ($GLOBALS["default"]->recaptcha == 'enable') { ?>
                             <div class='recaptcha'>
                                 <div class="g-recaptcha" data-theme='light' data-sitekey="<?php gec($GLOBALS["default"]->rsitekey) ?>"></div>
                             </div>
-                            <?php
-                        } ?>
+                        <?php } ?>
+                        <!-- END -->
+
                         <div class="submitbtns">
-                            <span class="submit global" form='.gr_sign' do='login' btn='<?php gec($GLOBALS["lang"]->register); ?>' em='<?php gec($GLOBALS["lang"]->invalid_value); ?>' gst=0>
-                                <?php gec($GLOBALS["lang"]->login); ?>
-                            </span>
-                            <span class="submit ajx reset d-none" form='.gr_sign'><?php gec($GLOBALS["lang"]->reset); ?></span>
+                            <div class="form-group">
+                                 <span class="submit global dc_button" form='.gr_sign' do='login' btn='<?php gec($GLOBALS["lang"]->register); ?>' em='<?php gec($GLOBALS["lang"]->invalid_value); ?>' gst=0>
+                                    <?php gec($GLOBALS["lang"]->login); ?>
+                                </span>
+                                <span class="submit ajx reset d-none" form='.gr_sign'><?php gec($GLOBALS["lang"]->reset); ?></span>
+                            </div>
                         </div>
-                        <?php if ($GLOBALS["default"]->userreg == 'enable') {
-                            ?>
+                        <?php if ($GLOBALS["default"]->userreg == 'enable') { ?>
                             <div class="switch" qn='<?php gec($GLOBALS["lang"]->already_have_account); ?>' btn='<?php gec($GLOBALS["lang"]->login); ?>'>
                                 <?php gr_loginproviders('show'); ?>
                                 <i><?php gec($GLOBALS["lang"]->dont_have_account); ?></i>
                                 <span><?php gec($GLOBALS["lang"]->create); ?></span>
                             </div>
-                            <?php
-                        } ?>
-                        <div class="footer">
-                            <ul>
-                                <li class='grpgopen' pg='about'><?php gec($GLOBALS["lang"]->nav_about) ?></li>
-                                <li class='grpgopen' pg='terms'><?php gec($GLOBALS["lang"]->nav_terms) ?></li>
-                                <li class='grpgopen' pg='privacy'><?php gec($GLOBALS["lang"]->nav_privacy) ?></li>
-                                <li class='grpgopen' pg='contact'><?php gec($GLOBALS["lang"]->nav_contact) ?></li>
-                            </ul>
-                        </div>
+                        <?php } ?>
                     </form>
-                    <div class='tos'>
-                        <h4><span><?php gec($GLOBALS["lang"]->tos) ?></span><i class="gi-cancel-circled"></i></h4>
-                        <p></p>
-                    </div>
+
                 </div>
-                <?php gr_ads('place', 'siginpagefooter'); ?>
             </div>
-        </div>
     </section>
     <div class='gr-consent<?php gec(' '.$GLOBALS["lang"]->core_align) ?>'>
         <span>
@@ -196,3 +174,77 @@ gr_core('hf', 'footer');
     document.body.appendChild(el);
 </script>
 </html>
+
+<style>
+    .gr_sign {
+        background: #36393F !important;
+        border-radius: 5px !important;
+        padding: 30px;
+        min-width: 450px;
+    }
+
+    .dc_hello {
+        font-weight: 600;
+        font-size: 25px;
+        color: white;
+        padding-top: 5px;
+    }
+
+    .dc_hello_secondary {
+        font-size: 14px;
+        color: #8E9297;
+        margin-bottom: 30px;
+    }
+
+    .switch {
+        margin-top: 12px !important;
+        background: none !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .switch i {
+        color: #8E9297 !important;
+    }
+
+    .switch span {
+        background: 0 !important;
+        color: #7289DA !important;
+        padding: 0 !important;
+    }
+
+    label {
+        background: none !important;
+        border: none !important;
+        text-align: left !important;
+        padding: 0 !important;
+        color: #8E9297 !important;
+        font-weight: normal !important;
+    }
+
+    input[type=text], input[type=password], input[type=email] {
+        background: #303338 !important;
+        border: solid 1px #262626 !important;
+        padding: 10px !important;
+        font-size: 14px !important;
+        border-radius: 3px !important;
+        box-sizing: border-box;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        width: 100%;
+        color: white !important;
+    }
+
+    input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+        border: solid 1px #7289DA !important;
+    }
+
+    .dc_button {
+        padding: 11px 2px 11px 2px !important;
+        border-radius: 3px!important;
+        font-size: 16px !important;
+        background: #7289DA !important;
+        color: white !important;
+    }
+</style>
