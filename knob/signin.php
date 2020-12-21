@@ -36,8 +36,8 @@ $pgload = str_replace('/', '', pg('signin/pg'));
     <meta property="twitter:title" content="<?php gec($GLOBALS["default"]->sitename.' - '.$GLOBALS["default"]->siteslogan); ?>">
     <meta property="twitter:description" content="<?php gec($GLOBALS["default"]->sitedesc); ?>">
     <meta property="twitter:image" content="<?php gec($GLOBALS["default"]->grsitelogo); ?>">
-    <link rel="shortcut icon" type="image/png" href="<?php gec(mf("grupo/global/favicon.png")); ?>" />
-    <link rel="apple-touch-icon" href="<?php gec(mf("grupo/global/icon192.png")); ?>" />
+    <link rel="shortcut icon" type="image/png" href="<?php gec(mf("")); ?>" />
+    <link rel="apple-touch-icon" href="<?php gec(mf("")); ?>" />
     <link rel='manifest' href='<?php gec($GLOBALS["default"]->weburl); ?>manifest/'>
     <link href="<?php gec($GLOBALS["default"]->weburl) ?>riches/kit/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="<?php gec($GLOBALS["default"]->weburl) ?>riches/fonts/<?php gec($GLOBALS["default"]->default_font) ?>/font.css" rel="stylesheet">

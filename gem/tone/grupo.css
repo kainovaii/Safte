@@ -75,7 +75,7 @@ justify-content: center;
 
 .gr-preloader > div > span
 {
-background-image: url(../ore/grupo/global/load.gif);
+/**background-image: url(../ore/grupo/global/loader.svg); **/
 background-repeat: no-repeat;
 background-position: center;
 background-size: 80px;

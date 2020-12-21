@@ -44,8 +44,8 @@ $GLOBALS["grads"] = gr_ads('get');
     <meta property="twitter:title" content="<?php gec($GLOBALS["default"]->sitename.' - '.$GLOBALS["default"]->siteslogan); ?>">
     <meta property="twitter:description" content="<?php gec($GLOBALS["default"]->sitedesc); ?>">
     <meta property="twitter:image" content="<?php gec($GLOBALS["default"]->grsitelogo); ?>">
-    <link rel="shortcut icon" type="image/png" href="<?php gec(mf("grupo/global/favicon.png")); ?>" />
-    <link rel="apple-touch-icon" href="<?php gec(mf("grupo/global/icon192.png")); ?>" />
+    <link rel="shortcut icon" type="image/png" href="<?php gec(mf("")); ?>" />
+    <link rel="apple-touch-icon" href="<?php gec(mf("")); ?>" />
     <link rel='manifest' href='<?php gec($GLOBALS["default"]->weburl); ?>manifest/'>
     <link href="<?php gec($GLOBALS["default"]->weburl) ?>riches/kit/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="<?php gec($GLOBALS["default"]->weburl) ?>riches/fonts/<?php gec($GLOBALS["default"]->default_font) ?>/font.css" rel="stylesheet">
@@ -137,11 +137,14 @@ $GLOBALS["grads"] = gr_ads('get');
                                 <span class="d-none grproceed loadside appnd" offset=0></span>
                                 <ul class="list fh" style="background: #303136; border: none">
                                 </ul>
+                                <!--
                                 <span class="addmore" style="background: #36393F">
                                     <span>
                                         <i class="gi-plus"></i>
                                     </span>
                                 </span>
+                                -->
+
                                 <?php gr_ads('place', 'leftside'); ?>
                             </div>
                             <?php if ($GLOBALS["grusrlog"]["radiostatus"] == 'radioenabled') {
@@ -186,12 +189,13 @@ $GLOBALS["grads"] = gr_ads('get');
                                 <i class="icon gi-left-open tabclose d-none animate__animated animate__fadeInRight" side="right"></i>
                                 <?php
                             } ?>
-                            <i class='icon gi-left-open goback d-md-none'></i>
-                            <span class='left'>
+                            <i class="icon gi-left-open goback d-md-none"></i>
+                            <span class="left">
                                 <span>
                                     <img class="lazyimg" data-src="<?php gec(mf("grupo/global/load.gif")); ?>">
-                                    <span></span>
-                                </span></span>
+                                    <span style="color: white;"></span>
+                                </span>
+                            </span>
                             <span class='right'>
                                 <?php if ($GLOBALS["logged"]) {
                                     ?>
@@ -712,6 +716,11 @@ gr_core('hf', 'footer');
         border-left: solid 3px white !important;
     }
 
+    .loadgroup.paj {
+        background: transparent !important;
+        border-left: solid 3px white !important;
+    }
+
     .loadgroup.paj:hover {
         background: transparent !important;
 
@@ -724,40 +733,74 @@ gr_core('hf', 'footer');
 
     .you i {
         background: transparent !important;
-        box-shadow: none !important;
     }
 
-    .gr-remove {
-        color: red !important;
+    .usr i {
+        background: transparent !important;
     }
-    .gr-reply {
-        color: red !important;
-    }
+
+
 
     .swr-menu {
         background: #191A1D !important;
         padding: 8px !important;
     }
 
-    .swr-menu .formpop {
+
+    .swr-menu .loadside, .vwpt, .formpop {
         padding: 8px !important;
         transition: .4s; !important;
         border-radius: 3px !important;
-        margin-bottom: 5px;
     }
 
-    .swr-menu .formpop:hover {
+    .swr-menu .loadside:hover, .vwpt:hover, .formpop:hover {
         background: #5D6EB0 !important;
     }
 
-    .swr-menu input {
-        padding: 8px !important;
-        transition: .4s; !important;
+    .paj {
+        background: #5D6EB0 !important;
         border-radius: 3px !important;
-        margin-bottom: 5px;
     }
 
-    .swr-menu input:hover {
-        background: #5D6EB0 !important;
+    .gi-pencil-1 {
+        background: transparent !important;
+    }
+
+    .shw {
+        background: transparent !important;
+    }
+
+    .pm {
+        background: #404449 !important;
+    }
+
+    .grform input[type=submit] {
+        padding: 11px 2px 11px 2px !important;
+        border-radius: 3px!important;
+        font-size: 16px !important;
+        background: #7289DA !important;
+        color: white !important;
+    }
+
+    .grform input[type=text], input[type=password], input[type=email], textarea {
+        background: #303338 !important;
+        border: solid 1px #262626 !important;
+        padding: 10px !important;
+        font-size: 14px !important;
+        border-radius: 3px !important;
+        box-sizing: border-box;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        width: 100%;
+        color: white !important;
+    }
+
+    .grform input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, textarea:focus {
+        border: solid 1px #7289DA !important;
     }
 </style>
+
+
+
+
