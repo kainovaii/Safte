@@ -244,10 +244,15 @@ $GLOBALS["grads"] = gr_ads('get');
                                     </div>
                                 </div>
                             </div>
-                            <ul class="msgs fh">
-                                <div>
+                            <ul class='msgs fh'>
+                                <div class='zeroelem fh'>
                                     <div class="welcome">
 
+                                        <span style="width: 600px">
+                                            <img src="<?php gec($GLOBALS["default"]->weburl) ?>/gem/ore/forq/img/bear.svg" width="300">
+                                            <i class="title mt-5">Salut! un accueil chaleureux à toi</i>
+                                        </span>
+                                        <?php gr_ads('place', 'welcome'); ?>
                                     </div>
                                 </div>
                             </ul>
@@ -718,7 +723,6 @@ gr_core('hf', 'footer');
 
     .loadgroup.paj {
         background: transparent !important;
-        border-left: solid 3px white !important;
     }
 
     .loadgroup.paj:hover {
